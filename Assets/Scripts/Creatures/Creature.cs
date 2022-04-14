@@ -48,6 +48,15 @@ public abstract class Creature : MonoBehaviour
         float maxSpeedChange = MaxAcceleration * Time.deltaTime;
         velocity.x = Mathf.MoveTowards(velocity.x, DesiredVelocity(hor).x, maxSpeedChange);
 
+        if(hor > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if(hor < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
         if (desiredJump)
         {
             desiredJump = false;
@@ -61,7 +70,6 @@ public abstract class Creature : MonoBehaviour
     {
         if (isGrounded())
         {
-            print("Jump");
             float jumpSpeed = Mathf.Sqrt(-2 * Physics.gravity.y * JumpHeight);
             velocity.y += jumpSpeed;
         }
