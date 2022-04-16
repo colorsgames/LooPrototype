@@ -10,6 +10,9 @@ public abstract class Creature : MonoBehaviour
     public float RunSpeed;
     public float MaxAcceleration;
     public float JumpHeight;
+    [Header("Animations")]
+    public Animator Animator;
+    public float changeAnimSpeed;
     [Header("Ground Check")]
     public Transform groundCheck;
     public float radiusCheckCircle;
@@ -34,6 +37,7 @@ public abstract class Creature : MonoBehaviour
     protected virtual void Update()
     {
         curretSpeed = running ? RunSpeed : WalkSpeed;
+
     }
 
     private Vector2 DesiredVelocity(float hor)
@@ -55,6 +59,20 @@ public abstract class Creature : MonoBehaviour
         else if(hor < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+        }
+        float curretSpeedAnim = Animator.GetFloat("Speed");
+        float maxChangeSpeed = changeAnimSpeed * Time.deltaTime;
+        if (hor != 0 && isGrounded())
+        {
+            Animator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
+        }
+        else if (!isGrounded())
+        {
+            Animator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
+        }
+        else
+        {
+            Animator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
         }
 
         if (desiredJump)
