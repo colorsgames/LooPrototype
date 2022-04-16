@@ -11,7 +11,8 @@ public abstract class Creature : MonoBehaviour
     public float MaxAcceleration;
     public float JumpHeight;
     [Header("Animations")]
-    public Animator Animator;
+    public Animator moveAnimator;
+    public Animator armAnimator;
     public float changeAnimSpeed;
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -60,19 +61,25 @@ public abstract class Creature : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        float curretSpeedAnim = Animator.GetFloat("Speed");
+        float curretSpeedAnim = moveAnimator.GetFloat("Speed");
         float maxChangeSpeed = changeAnimSpeed * Time.deltaTime;
         if (hor != 0 && isGrounded())
         {
-            Animator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
+            moveAnimator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
+            armAnimator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
         }
         else if (!isGrounded())
         {
-            Animator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
+            moveAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
+            armAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
         }
         else
         {
-            Animator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
+            if (curretSpeedAnim >= 0.01f)
+            {
+                moveAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
+                armAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
+            }
         }
 
         if (desiredJump)
