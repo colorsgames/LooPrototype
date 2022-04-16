@@ -16,7 +16,6 @@ public class Player : Creature
 
         if (Input.GetButtonDown("TakeBackWeapon"))
         {
-            print("ss");
             if (!takeBackWeapon)
             {
                 armAnimator.SetTrigger("Take");

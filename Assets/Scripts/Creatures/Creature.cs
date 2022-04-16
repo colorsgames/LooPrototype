@@ -105,6 +105,22 @@ public abstract class Creature : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, radiusCheckCircle, checkMask);
     }
 
+    public Vector2 MyDirection()
+    {
+        if (transform.localScale.x > 0)
+        {
+            return Vector2.right;
+        }
+        else if (transform.localScale.x < 0)
+        {
+            return Vector2.left;
+        }
+        else
+        {
+            return Vector2.zero;
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
