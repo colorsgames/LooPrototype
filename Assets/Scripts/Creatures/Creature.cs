@@ -19,17 +19,15 @@ public abstract class Creature : MonoBehaviour
     public float radiusCheckCircle;
     public LayerMask checkMask;
 
-    protected float curretSpeed;
-
     protected bool running;
     protected bool desiredJump;
 
     protected Rigidbody2D rb;
 
     private Vector2 velocity;
+    private float curretSpeed;
 
-
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         curretSpeed = WalkSpeed;
@@ -53,32 +51,37 @@ public abstract class Creature : MonoBehaviour
         float maxSpeedChange = MaxAcceleration * Time.deltaTime;
         velocity.x = Mathf.MoveTowards(velocity.x, DesiredVelocity(hor).x, maxSpeedChange);
 
-        if(hor > 0)
+        if (hor > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if(hor < 0)
+        else if (hor < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        float curretSpeedAnim = moveAnimator.GetFloat("Speed");
-        float maxChangeSpeed = changeAnimSpeed * Time.deltaTime;
-        if (hor != 0 && isGrounded())
+
+        if (moveAnimator != null && armAnimator != null)
         {
-            moveAnimator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
-            armAnimator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
-        }
-        else if (!isGrounded())
-        {
-            moveAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
-            armAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
-        }
-        else
-        {
-            if (curretSpeedAnim >= 0.01f)
+            float curretSpeedAnim = moveAnimator.GetFloat("Speed");
+            float maxChangeSpeed = changeAnimSpeed * Time.deltaTime;
+
+            if (hor != 0 && isGrounded())
             {
-                moveAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
-                armAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
+                moveAnimator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
+                armAnimator.SetFloat("Speed", running ? Mathf.Lerp(curretSpeedAnim, 1f, maxChangeSpeed) : Mathf.Lerp(curretSpeedAnim, 0.5f, maxChangeSpeed));
+            }
+            else if (!isGrounded())
+            {
+                moveAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
+                armAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 1.5f, maxChangeSpeed));
+            }
+            else
+            {
+                if (curretSpeedAnim >= 0.01f)
+                {
+                    moveAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
+                    armAnimator.SetFloat("Speed", Mathf.Lerp(curretSpeedAnim, 0f, maxChangeSpeed));
+                }
             }
         }
 

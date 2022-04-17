@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Player : Creature
 {
+    [Header("Player")]
+    [SerializeField]
+    private Weapons sword;
+
     private float horInput;
 
     bool takeBackWeapon;
+
 
     protected override void Update()
     {
@@ -27,6 +32,8 @@ public class Player : Creature
                 takeBackWeapon = false;
             }
         }
+
+        sword.attack = Input.GetButton("Fire1");
 
         base.Update();
     }
