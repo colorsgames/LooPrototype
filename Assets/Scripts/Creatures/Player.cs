@@ -15,6 +15,7 @@ public class Player : Creature
 
     protected override void Update()
     {
+        if (!Alive) return;
         horInput = Input.GetAxis("Horizontal");
         running = Input.GetButton("Run");
         desiredJump |= Input.GetButtonDown("Jump");

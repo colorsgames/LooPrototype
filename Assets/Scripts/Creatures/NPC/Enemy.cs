@@ -8,6 +8,14 @@ public class Enemy : NPC
     protected bool aggression;
     [SerializeField]
     protected Weapons weapon;
+    [SerializeField]
+    protected Creature targetCreature;
+
+    public enum VisTargetType
+    {
+        Enter,
+        Exit
+    }
 
     protected override void Update()
     {
@@ -15,31 +23,32 @@ public class Enemy : NPC
         {
             GoTo(target.position);
         }
+        if (targetCreature && !targetCreature.Alive)
+        {
+            TargetVisUpdate(targetCreature, VisTargetType.Exit);
+        }
         base.Update();
     }
 
     protected virtual void Attack() { }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    public virtual void TargetVisUpdate(Creature creature, VisTargetType visType)
     {
-        print(collision.name);
-        if (collision.GetComponent<Player>())
+        if (visType == VisTargetType.Enter)
         {
             running = true;
             aggression = true;
-            target = collision.GetComponent<Player>().transform;
-        }
-    }
+            target = creature.transform;
+            targetCreature = creature;
 
-    protected virtual void OnTriggerExit2D(Collider2D collision)
-    {
-        print(collision.name);
-        if (collision.GetComponent<Player>())
+        }
+        else
         {
             running = false;
             startStrayingPos = transform.position;
             aggression = false;
             target = null;
+            targetCreature = null;
         }
     }
 }

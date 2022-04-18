@@ -8,7 +8,7 @@ public class SwordsMan : Enemy
     [SerializeField]
     private LayerMask attackMask;
     [SerializeField]
-    private float attackDistance;
+    private float rayAttackDistance;
     [SerializeField]
     private Transform attackVisPoint;
 
@@ -20,7 +20,8 @@ public class SwordsMan : Enemy
 
     protected override void Attack()
     {
-        RaycastHit2D hit = Physics2D.Raycast(attackVisPoint.position, MyDirection(), attackDistance, attackMask);
+        if (!Alive) { weapon.attack = false; return; }
+        RaycastHit2D hit = Physics2D.Raycast(attackVisPoint.position, MyDirection(), rayAttackDistance, attackMask);
         if (hit)
         {
             if (hit.collider.GetComponent<Player>())
@@ -32,22 +33,28 @@ public class SwordsMan : Enemy
                 weapon.attack = false;
             }
         }
+        else
+        {
+            weapon.attack = false;
+        }
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    public override void TargetVisUpdate(Creature creature, VisTargetType visType)
     {
-        armAnimator.SetTrigger("Take");
-        base.OnTriggerEnter2D(collision);
-    }
-
-    protected override void OnTriggerExit2D(Collider2D collision)
-    {
-        armAnimator.SetTrigger("PutAway");
-        base.OnTriggerExit2D(collision);
+        if (!Alive) return;
+        if (visType == VisTargetType.Enter)
+        {
+            armAnimator.SetTrigger("Take");
+        }
+        else
+        {
+            armAnimator.SetTrigger("PutAway");
+        }
+        base.TargetVisUpdate(creature, visType);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(attackVisPoint.position, MyDirection() * attackDistance);
+        Gizmos.DrawRay(attackVisPoint.position, MyDirection() * rayAttackDistance);
     }
 }

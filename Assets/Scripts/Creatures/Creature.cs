@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Creature : MonoBehaviour
 {
-    public float Health;
+    public float MaxHealth;
+    public bool Alive = true;
     [Header("Movement Settings")]
     public float WalkSpeed;
     public float RunSpeed;
@@ -26,9 +27,11 @@ public abstract class Creature : MonoBehaviour
 
     private Vector2 velocity;
     private float curretSpeed;
+    private float curretHealth;
 
     protected virtual void Start()
     {
+        curretHealth = MaxHealth;
         rb = GetComponent<Rigidbody2D>();
         curretSpeed = WalkSpeed;
     }
@@ -46,6 +49,10 @@ public abstract class Creature : MonoBehaviour
 
     protected void Movement(float hor)
     {
+        if (!Alive)
+        {
+            hor = 0;
+        }
         velocity = rb.velocity;
 
         float maxSpeedChange = MaxAcceleration * Time.deltaTime;
@@ -106,6 +113,15 @@ public abstract class Creature : MonoBehaviour
     protected bool isGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, radiusCheckCircle, checkMask);
+    }
+
+    public void MakeDamage(float damage)
+    {
+        curretHealth -= damage;
+        if(curretHealth <= 0)
+        {
+            Alive = false;
+        }
     }
 
     public Vector2 MyDirection()

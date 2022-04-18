@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapons : MonoBehaviour
 {
     [Header("General")]
-    private Player player;
+    private Creature creature;
     [SerializeField]
     private Animator armAnimator;
     [SerializeField]
@@ -14,6 +14,8 @@ public class Weapons : MonoBehaviour
     private bool isCloseWeapon;
     [SerializeField]
     private float attackDelay;
+    [SerializeField]
+    private float damage;
     [Header("Gunshot")]
     [SerializeField]
     private LayerMask attackMask;
@@ -26,12 +28,13 @@ public class Weapons : MonoBehaviour
 
     float curretTime;
 
+    [HideInInspector]
     public bool attack;
 
     void Start()
     {
         inventory = transform.GetComponentInParent<Inventory>();
-        player = FindObjectOfType<Player>();
+        creature = GetComponentInParent<Creature>();
         curretTime = attackDelay;
     }
 
@@ -56,13 +59,17 @@ public class Weapons : MonoBehaviour
         armAnimator.SetTrigger("Attack1");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (inventory.attack)
         {
             if (collision.GetComponent<Rigidbody2D>())
             {
-                collision.GetComponent<Rigidbody2D>().AddForce(player.MyDirection() * force, ForceMode2D.Impulse);
+                collision.GetComponent<Rigidbody2D>().AddForce((creature.MyDirection() + Vector2.up) * force, ForceMode2D.Impulse);
+            }
+            if (collision.GetComponent<Creature>())
+            {
+                collision.GetComponent<Creature>().MakeDamage(damage);
             }
             inventory.attack = false;
         }
