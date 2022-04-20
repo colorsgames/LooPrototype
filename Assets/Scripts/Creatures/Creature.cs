@@ -24,6 +24,7 @@ public abstract class Creature : MonoBehaviour
     protected bool desiredJump;
 
     protected Rigidbody2D rb;
+    protected Rigidbody2D[] limbs;
 
     private Vector2 velocity;
     private float curretSpeed;
@@ -33,6 +34,10 @@ public abstract class Creature : MonoBehaviour
     {
         curretHealth = MaxHealth;
         rb = GetComponent<Rigidbody2D>();
+        if (GetComponentInChildren<Rigidbody2D>())
+        {
+            limbs = GetComponentsInChildren<Rigidbody2D>();
+        }
         curretSpeed = WalkSpeed;
     }
 
@@ -121,7 +126,23 @@ public abstract class Creature : MonoBehaviour
         if(curretHealth <= 0)
         {
             Alive = false;
+            Dead();
         }
+    }
+
+    protected virtual void Dead()
+    {
+        moveAnimator.enabled = false;
+        armAnimator.enabled = false;
+
+        foreach (Rigidbody2D item in limbs)
+        {
+            if (!item.simulated)
+            {
+                item.simulated = true;
+            }
+        }
+        limbs[0].simulated = false;
     }
 
     public Vector2 MyDirection()

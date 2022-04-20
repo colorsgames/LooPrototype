@@ -52,6 +52,23 @@ public class Weapons : MonoBehaviour
                 curretTime = 0;
             }
         }
+
+        if (isCloseWeapon && inventory.attack)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(rayTarget.position, rayTarget.right, distane, attackMask);
+            if (hit)
+            {
+                if (hit.collider.GetComponent<Rigidbody2D>())
+                {
+                    hit.collider.GetComponent<Rigidbody2D>().AddForce((creature.MyDirection() + Vector2.up) * force, ForceMode2D.Impulse);
+                }
+                if (hit.collider.GetComponent<Creature>())
+                {
+                    hit.collider.GetComponent<Creature>().MakeDamage(damage);
+                }
+            }
+            inventory.attack = false;
+        }
     }
 
     void SwordAttack()
@@ -59,19 +76,8 @@ public class Weapons : MonoBehaviour
         armAnimator.SetTrigger("Attack1");
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnDrawGizmos()
     {
-        if (inventory.attack)
-        {
-            if (collision.GetComponent<Rigidbody2D>())
-            {
-                collision.GetComponent<Rigidbody2D>().AddForce((creature.MyDirection() + Vector2.up) * force, ForceMode2D.Impulse);
-            }
-            if (collision.GetComponent<Creature>())
-            {
-                collision.GetComponent<Creature>().MakeDamage(damage);
-            }
-            inventory.attack = false;
-        }
+        Gizmos.DrawRay(rayTarget.position, rayTarget.up * distane);
     }
 }

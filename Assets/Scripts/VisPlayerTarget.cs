@@ -13,9 +13,12 @@ public class VisPlayerTarget : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>().Alive)
+        if (collision.GetComponent<Player>())
         {
-            enemy.TargetVisUpdate(collision.GetComponent<Player>(), Enemy.VisTargetType.Enter);
+            if (collision.GetComponent<Player>().Alive)
+            {
+                enemy.TargetVisUpdate(collision.GetComponent<Player>(), Enemy.VisTargetType.Enter);
+            }
         }
     }
 
