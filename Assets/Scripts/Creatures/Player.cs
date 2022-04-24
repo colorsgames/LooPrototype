@@ -6,12 +6,20 @@ public class Player : Creature
 {
     [Header("Player")]
     [SerializeField]
-    private Weapons sword;
+    private Weapons[] weapons;
+    [HideInInspector]
+    public Inventory inventory;
 
     private float horInput;
 
     bool takeBackWeapon;
 
+
+    protected override void Start()
+    {
+        inventory = GetComponentInChildren<Inventory>();
+        base.Start();
+    }
 
     protected override void Update()
     {
@@ -20,7 +28,7 @@ public class Player : Creature
         running = Input.GetButton("Run");
         desiredJump |= Input.GetButtonDown("Jump");
 
-        if (Input.GetButtonDown("TakeBackWeapon"))
+        if (Input.GetButtonDown("TakeBackWeapon") && !takeGun)
         {
             if (!takeBackWeapon)
             {
@@ -34,7 +42,13 @@ public class Player : Creature
             }
         }
 
-        sword.attack = Input.GetButton("Fire1");
+        foreach (Weapons item in weapons)
+        {
+            if (item.gameObject.activeInHierarchy)
+            {
+                item.attack = Input.GetButton("Fire1");
+            }
+        }
 
         base.Update();
     }

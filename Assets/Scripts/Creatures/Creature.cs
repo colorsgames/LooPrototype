@@ -6,6 +6,7 @@ public abstract class Creature : MonoBehaviour
 {
     public float MaxHealth;
     public bool Alive = true;
+    public bool isPlayer;
     [Header("Movement Settings")]
     public float WalkSpeed;
     public float RunSpeed;
@@ -19,6 +20,11 @@ public abstract class Creature : MonoBehaviour
     public Transform groundCheck;
     public float radiusCheckCircle;
     public LayerMask checkMask;
+
+    [HideInInspector]
+    public bool takeGun;
+    [HideInInspector]
+    public bool takeSword;
 
     protected bool running;
     protected bool desiredJump;
@@ -63,14 +69,7 @@ public abstract class Creature : MonoBehaviour
         float maxSpeedChange = MaxAcceleration * Time.deltaTime;
         velocity.x = Mathf.MoveTowards(velocity.x, DesiredVelocity(hor).x, maxSpeedChange);
 
-        if (hor > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else if (hor < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
+        Rotate(hor);
 
         if (moveAnimator != null && armAnimator != null)
         {
@@ -118,6 +117,18 @@ public abstract class Creature : MonoBehaviour
     protected bool isGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, radiusCheckCircle, checkMask);
+    }
+
+    public void Rotate(float rot)
+    {
+        if (rot > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (rot < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     public void MakeDamage(float damage)

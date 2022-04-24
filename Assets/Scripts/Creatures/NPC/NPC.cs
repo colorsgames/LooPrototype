@@ -13,11 +13,13 @@ public class NPC : Creature
     private LayerMask obstaclesMask;
     [SerializeField]
     private float distance;
+
     [Header("WalkSettings")]
+    public float stopFollowingRadius;
+    public float stopAggressiveRadius;
+
     [SerializeField]
     private float jumpDelay;
-    [SerializeField]
-    private float stopRadius;
     [SerializeField]
     private float strayingRandomRadius;
 
@@ -50,21 +52,31 @@ public class NPC : Creature
         {
             randomTarget = new Vector2(startStrayingPos.x + Random.Range(-strayingRandomRadius, strayingRandomRadius), 0);
         }
-        GoTo(randomTarget);
+        GoTo(randomTarget, stopFollowingRadius);
 
     }
 
-    public void GoTo(Vector3 target)
+    public void GoTo(Vector3 target, float _stopRadius)
     {
+        if (!Alive) return;
         came = false;
 
         Vector2 offset = target - transform.position;
 
-        if (offset.x < -stopRadius)
+        if (offset.x < -0.1)
+        {
+            Rotate(-1f);
+        }
+        else if (offset.x > 0.1)
+        {
+            Rotate(1f);
+        }
+
+        if (offset.x < -_stopRadius)
         {
             Movement(-1f);
         }
-        else if (offset.x > stopRadius)
+        else if (offset.x > _stopRadius)
         {
             Movement(1f);
         }

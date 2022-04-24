@@ -9,6 +9,12 @@ public class Enemy : NPC
     [SerializeField]
     protected Weapons weapon;
     [SerializeField]
+    private float destroyTime;
+
+    public LayerMask attackMask;
+    public float rayAttackDistance;
+    public Transform attackVisPoint;
+
     protected Creature targetCreature;
 
     public enum VisTargetType
@@ -21,11 +27,15 @@ public class Enemy : NPC
     {
         if (target && aggression)
         {
-            GoTo(target.position);
+            GoTo(target.position, stopAggressiveRadius);
         }
         if (targetCreature && !targetCreature.Alive)
         {
             TargetVisUpdate(targetCreature, VisTargetType.Exit);
+        }
+        if (!Alive)
+        {
+            Destroy(gameObject, destroyTime);
         }
         base.Update();
     }

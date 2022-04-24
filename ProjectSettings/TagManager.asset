@@ -18,9 +18,9 @@ TagManager:
   - PlayerSword
   - EnemySword
   - PlayerVis
-  - 
-  - 
-  - 
+  - Item
+  - EnemyVis
+  - FX
   - 
   - 
   - 

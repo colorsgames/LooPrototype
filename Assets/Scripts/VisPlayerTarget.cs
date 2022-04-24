@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class VisPlayerTarget : MonoBehaviour
 {
+    [SerializeField]
+    private LayerMask obstacles;
     Enemy enemy;
 
     private void Start()
@@ -17,7 +19,19 @@ public class VisPlayerTarget : MonoBehaviour
         {
             if (collision.GetComponent<Player>().Alive)
             {
-                enemy.TargetVisUpdate(collision.GetComponent<Player>(), Enemy.VisTargetType.Enter);
+                Vector3 offset = collision.transform.position - transform.position;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, offset, 100, obstacles);
+                if (hit)
+                {
+                    if (hit.collider.GetComponent<Player>())
+                    {
+                        enemy.TargetVisUpdate(collision.GetComponent<Player>(), Enemy.VisTargetType.Enter);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
             }
         }
     }

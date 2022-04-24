@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class SwordsMan : Enemy
 {
-    [Header("SwordsMan")]
-    [SerializeField]
-    private LayerMask attackMask;
-    [SerializeField]
-    private float rayAttackDistance;
-    [SerializeField]
-    private Transform attackVisPoint;
-
     protected override void Update()
     {
         Attack();
