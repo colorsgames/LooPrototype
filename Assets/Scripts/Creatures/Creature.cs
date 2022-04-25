@@ -32,7 +32,13 @@ public abstract class Creature : MonoBehaviour
     protected Rigidbody2D rb;
     protected Rigidbody2D[] limbs;
 
+    private Rigidbody2D connectedBody;
+    private Rigidbody2D previousConnectedBody;
+
     private Vector2 velocity;
+    private Vector2 connectionWorldPosition;
+    private Vector2 connectionVelocity;
+
     private float curretSpeed;
     private float curretHealth;
 
@@ -53,11 +59,6 @@ public abstract class Creature : MonoBehaviour
 
     }
 
-    private Vector2 DesiredVelocity(float hor)
-    {
-        return transform.right * curretSpeed * hor;
-    }
-
     protected void Movement(float hor)
     {
         if (!Alive)
@@ -66,8 +67,28 @@ public abstract class Creature : MonoBehaviour
         }
         velocity = rb.velocity;
 
+        if (!isGrounded())
+        {
+            connectionVelocity = Vector2.zero;
+            previousConnectedBody = connectedBody;
+            connectedBody = null;
+        }
+
+        if (connectedBody)
+        {
+            if (connectedBody.mass > rb.mass)
+            {
+                UpdateConnectionState();
+            }
+        }
+
         float maxSpeedChange = MaxAcceleration * Time.deltaTime;
-        velocity.x = Mathf.MoveTowards(velocity.x, DesiredVelocity(hor).x, maxSpeedChange);
+        Vector2 relativeVelocity = velocity - connectionVelocity;
+
+        float curretX = Vector3.Dot(relativeVelocity, Vector2.right);
+        float newX = Mathf.MoveTowards(curretX, DesiredVelocity(hor).x, maxSpeedChange);
+
+        velocity += Vector2.right * (newX - curretX);
 
         Rotate(hor);
 
@@ -105,20 +126,6 @@ public abstract class Creature : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    private void Jump()
-    {
-        if (isGrounded())
-        {
-            float jumpSpeed = Mathf.Sqrt(-2 * Physics.gravity.y * JumpHeight);
-            velocity.y += jumpSpeed;
-        }
-    }
-
-    protected bool isGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, radiusCheckCircle, checkMask);
-    }
-
     public void Rotate(float rot)
     {
         if (rot > 0)
@@ -134,11 +141,32 @@ public abstract class Creature : MonoBehaviour
     public void MakeDamage(float damage)
     {
         curretHealth -= damage;
-        if(curretHealth <= 0)
+        if (curretHealth <= 0)
         {
             Alive = false;
             Dead();
         }
+    }
+
+    public Vector2 MyDirection()
+    {
+        if (transform.localScale.x > 0)
+        {
+            return Vector2.right;
+        }
+        else if (transform.localScale.x < 0)
+        {
+            return Vector2.left;
+        }
+        else
+        {
+            return Vector2.zero;
+        }
+    }
+
+    private Vector2 DesiredVelocity(float hor)
+    {
+        return transform.right * curretSpeed * hor;
     }
 
     protected virtual void Dead()
@@ -156,19 +184,36 @@ public abstract class Creature : MonoBehaviour
         limbs[0].simulated = false;
     }
 
-    public Vector2 MyDirection()
+    protected bool isGrounded()
     {
-        if (transform.localScale.x > 0)
+        return Physics2D.OverlapCircle(groundCheck.position, radiusCheckCircle, checkMask);
+    }
+
+    private void UpdateConnectionState()
+    {
+        Vector2 connectionMovement = connectedBody.position - connectionWorldPosition;
+        connectionVelocity = connectionMovement / Time.deltaTime;
+
+        connectionWorldPosition = connectedBody.position;
+    }
+
+    private void Jump()
+    {
+        if (isGrounded())
         {
-            return Vector2.right;
+            float jumpSpeed = Mathf.Sqrt(-2 * Physics.gravity.y * JumpHeight);
+            velocity.y += jumpSpeed;
         }
-        else if (transform.localScale.x < 0)
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (isGrounded())
         {
-            return Vector2.left;
-        }
-        else
-        {
-            return Vector2.zero;
+            if (collision.rigidbody)
+            {
+                connectedBody = collision.rigidbody;
+            }
         }
     }
 

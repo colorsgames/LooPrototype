@@ -6676,7 +6676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armAnimator: {fileID: 0}
-  force: 2
+  force: 0.2
   isCloseWeapon: 0
   attackDelay: 0.2
   damage: 50
@@ -6772,7 +6772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armAnimator: {fileID: 0}
-  force: 2
+  force: 0.1
   isCloseWeapon: 0
   attackDelay: 0.1
   damage: 30
@@ -11669,7 +11669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armAnimator: {fileID: 0}
-  force: 5
+  force: 2
   isCloseWeapon: 0
   attackDelay: 0.5
   damage: 100

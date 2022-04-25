@@ -29,7 +29,7 @@ public class VisPlayerTarget : MonoBehaviour
                     }
                     else
                     {
-                        return;
+                        enemy.TargetVisUpdate(collision.GetComponent<Player>(), Enemy.VisTargetType.Exit);
                     }
                 }
             }
