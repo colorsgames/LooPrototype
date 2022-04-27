@@ -19,6 +19,10 @@ public class Weapons : MonoBehaviour
     [SerializeField]
     private LayerMask attackMask;
     [SerializeField]
+    private LayerMask limbsLayer;
+    [SerializeField]
+    private Particle bloodParticle;
+    [SerializeField]
     private Transform rayTarget;
     [SerializeField]
     private float distane;
@@ -133,6 +137,14 @@ public class Weapons : MonoBehaviour
         if (isCloseWeapon)
         {
             RaycastHit2D hit = Physics2D.Raycast(rayTarget.position, rayTarget.up, distane, attackMask);
+            RaycastHit2D hitLimbs = Physics2D.Raycast(rayTarget.position, rayTarget.up, distane, limbsLayer);
+            if (hitLimbs)
+            {
+                if (inventory.attack)
+                {
+                    Attack(hitLimbs);
+                }
+            }
             if (hit)
             {
                 if (inventory.attack)
@@ -141,11 +153,13 @@ public class Weapons : MonoBehaviour
                     {
                         if (oldHit.collider.name != hit.collider.name)
                         {
+                            oldHit = hit;
                             Attack(hit);
                         }
                     }
                     else
                     {
+                        oldHit = hit;
                         Attack(hit);
                     }
                     //inventory.attack = false;
@@ -165,6 +179,11 @@ public class Weapons : MonoBehaviour
         SetGunEffects(true);
         ShotTrail trail = Instantiate<ShotTrail>(shotTrail, rayTarget.position, Quaternion.identity);
         RaycastHit2D hit = Physics2D.Raycast(rayTarget.position, rayTarget.right * creature.MyDirection(), distane, attackMask);
+        RaycastHit2D hitLimbs = Physics2D.Raycast(rayTarget.position, rayTarget.right * creature.MyDirection(), distane, limbsLayer);
+        if (hitLimbs)
+        {
+            Attack(hitLimbs);
+        }
         if (hit)
         {
             trail.SetTarget(hit.point);
@@ -178,14 +197,23 @@ public class Weapons : MonoBehaviour
 
     void Attack(RaycastHit2D hit)
     {
-        oldHit = hit;
-        if (hit.collider.GetComponent<Rigidbody2D>())
+        if (hit.rigidbody)
         {
-            hit.collider.GetComponent<Rigidbody2D>().AddForce((creature.MyDirection() + Vector2.up) * force, ForceMode2D.Impulse);
+            hit.rigidbody.AddForce((creature.MyDirection() + Vector2.up) * force, ForceMode2D.Impulse);
         }
         if (hit.collider.GetComponent<Creature>())
         {
             hit.collider.GetComponent<Creature>().MakeDamage(damage);
+        }
+        if (hit.collider.GetComponent<Chain>())
+        {
+            hit.collider.GetComponent<Chain>().Destroy();
+            print("false");
+        }
+        if (hit.collider.GetComponent<Limbs>())
+        {
+            Particle particle = Instantiate(bloodParticle, hit.point, Quaternion.identity);
+            particle.SetParent(hit.transform);
         }
     }
 

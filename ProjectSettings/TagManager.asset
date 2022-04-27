@@ -21,9 +21,9 @@ TagManager:
   - Item
   - EnemyVis
   - FX
-  - 
-  - 
-  - 
+  - Chain
+  - EnemyLimbs
+  - PlayerLimbs
   - 
   - 
   - 

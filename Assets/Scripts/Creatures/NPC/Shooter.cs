@@ -27,7 +27,14 @@ public class Shooter : Enemy
         {
             if (hit.collider.GetComponent<Player>())
             {
-                weapon.attack = true;
+                if (hit.collider.GetComponent<Player>().Alive)
+                {
+                    weapon.attack = true;
+                }
+                else
+                {
+                    weapon.attack = false;
+                }
             }
             else
             {

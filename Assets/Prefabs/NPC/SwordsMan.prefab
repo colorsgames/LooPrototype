@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991716584556490}
   - component: {fileID: 1076991716584556491}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991716632380902}
   - component: {fileID: 1076991716632380903}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: LeftLegVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991716819441055}
   - component: {fileID: 1076991716819441052}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: LeftArmVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991716899442502}
   - component: {fileID: 1076991716899442503}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991716919992852}
   - component: {fileID: 1076991716919992853}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991717168019453}
   - component: {fileID: 1076991717168019450}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: EnemySwordVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991717242195106}
   - component: {fileID: 1076991717242195107}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: EnemySwordVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1076991717328218298}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991717426973383}
   - component: {fileID: 1076991717426973381}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: EnemySword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,6 +780,10 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 129
+  limbsLayer:
+    serializedVersion: 2
+    m_Bits: 262144
+  bloodParticle: {fileID: -6881427048756459265, guid: cd40fb6fd537ce54c8938200e3bb9316, type: 3}
   rayTarget: {fileID: 1076991717426973383}
   distane: 1.34
   fxLifeTime: 0
@@ -798,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1076991717567688566}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: EnemySword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991717571177886}
   - component: {fileID: 1076991717571177887}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991717787107695}
   - component: {fileID: 1076991717787107692}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: HeadVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991718014806497}
   - component: {fileID: 1076991718014806510}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,7 +1080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991718063725573}
   - component: {fileID: 1076991718063725570}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightLegVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,7 +1162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076991718148755785}
   - component: {fileID: 1076991718148746934}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightArmVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2390078960462455068}
   - component: {fileID: 1726382956437106043}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1375,8 @@ GameObject:
   - component: {fileID: 7751767551698033941}
   - component: {fileID: 7751767551698033940}
   - component: {fileID: 7751767551698033943}
-  m_Layer: 9
+  - component: {fileID: 5613867235634298}
+  m_Layer: 17
   m_Name: Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,8 +1406,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767551698033942}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
@@ -1464,6 +1469,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07332483, y: 0.25854254}
   m_EdgeRadius: 0
+--- !u!114 &5613867235634298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767551698033942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767551815396634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1493,8 @@ GameObject:
   - component: {fileID: 7751767551815396633}
   - component: {fileID: 7751767551815396632}
   - component: {fileID: 7751767551815396635}
-  m_Layer: 9
+  - component: {fileID: 3469806501976928521}
+  m_Layer: 17
   m_Name: Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1506,8 +1524,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767551815396634}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
@@ -1569,6 +1587,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07675424, y: 0.25559726}
   m_EdgeRadius: 0
+--- !u!114 &3469806501976928521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767551815396634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767551912786035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1610,7 @@ GameObject:
   - component: {fileID: 7751767551912786034}
   - component: {fileID: 7751767551912786032}
   - component: {fileID: 7751767551912786033}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1610,8 +1640,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767551912786035}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1686,7 +1716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767552016280772}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1719,7 +1749,7 @@ GameObject:
   - component: {fileID: 7751767552026230861}
   - component: {fileID: 7751767552026230859}
   - component: {fileID: 7751767552026230856}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1749,8 +1779,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767552026230858}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1797,7 +1827,8 @@ GameObject:
   - component: {fileID: 7751767552055930605}
   - component: {fileID: 7751767552055930603}
   - component: {fileID: 7751767552055930600}
-  m_Layer: 9
+  - component: {fileID: 1795691310978175406}
+  m_Layer: 17
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1828,8 +1859,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767552055930602}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 5
@@ -1857,6 +1888,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.026884716, y: -0.0040328107}
   m_Size: {x: 0.4300995, y: 0.51338065}
   m_Direction: 0
+--- !u!114 &1795691310978175406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767552055930602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767552186902495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,7 +1909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767552186902494}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Shouder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1898,7 +1941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767552238828857}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1931,7 +1974,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7751767552298195462}
   - component: {fileID: 7751767552298195460}
-  m_Layer: 9
+  - component: {fileID: 2343938340642365558}
+  m_Layer: 17
   m_Name: RightHip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,6 +2023,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0720609, y: 0.21963912}
   m_EdgeRadius: 0
+--- !u!114 &2343938340642365558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767552298195463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767552529991062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,7 +2045,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7751767552529991065}
   - component: {fileID: 7751767552529991063}
-  m_Layer: 9
+  - component: {fileID: 7658984397938816018}
+  m_Layer: 17
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2037,6 +2094,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.076506056, y: 0.19136648}
   m_EdgeRadius: 0
+--- !u!114 &7658984397938816018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767552529991062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767552573645881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2117,7 @@ GameObject:
   - component: {fileID: 7751767552573645880}
   - component: {fileID: 7751767552573645863}
   - component: {fileID: 7751767552573645862}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2079,8 +2148,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767552573645881}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -2125,7 +2194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767552590966087}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2157,7 +2226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767552716548215}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: VisSwords
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2189,7 +2258,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7751767552738106731}
   - component: {fileID: 7751767552738106729}
-  m_Layer: 9
+  - component: {fileID: 8180256201853062196}
+  m_Layer: 17
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,6 +2308,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07464854, y: 0.41479117}
   m_EdgeRadius: 0
+--- !u!114 &8180256201853062196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767552738106728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767552895517845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767552895517844}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2278,7 +2360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767552903605807}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: Swords
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2311,7 +2393,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7751767552950639746}
   - component: {fileID: 7751767552950639744}
-  m_Layer: 9
+  - component: {fileID: 53912483237538687}
+  m_Layer: 17
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2359,6 +2442,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3369853, y: 0.25543693}
   m_EdgeRadius: 0
+--- !u!114 &53912483237538687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767552950639747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767553005764975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2465,7 @@ GameObject:
   - component: {fileID: 7751767553005764974}
   - component: {fileID: 7751767553005764977}
   - component: {fileID: 7751767553005764976}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Loo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2583,7 +2678,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7751767553139679780}
   - component: {fileID: 7751767553139679778}
-  m_Layer: 9
+  - component: {fileID: 7912558610782928195}
+  m_Layer: 17
   m_Name: LeftHip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2631,6 +2727,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07847468, y: 0.22108315}
   m_EdgeRadius: 0
+--- !u!114 &7912558610782928195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767553139679781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767553221776401
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,7 +2750,7 @@ GameObject:
   - component: {fileID: 7751767553221776400}
   - component: {fileID: 7751767553221776415}
   - component: {fileID: 7751767553221776414}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2672,8 +2780,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767553221776401}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -2718,7 +2826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767553280843447}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2751,7 +2859,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7751767553365704188}
   - component: {fileID: 7751767553365704186}
-  m_Layer: 9
+  - component: {fileID: 3475448729624892942}
+  m_Layer: 17
   m_Name: ElbowVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2799,6 +2908,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.075618744, y: 0.17837237}
   m_EdgeRadius: 0
+--- !u!114 &3475448729624892942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751767553365704189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751767553453886538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,7 +2931,7 @@ GameObject:
   - component: {fileID: 7751767553453886541}
   - component: {fileID: 7751767553453886536}
   - component: {fileID: 7751767553453886539}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2840,8 +2961,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767553453886538}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -2888,7 +3009,7 @@ GameObject:
   - component: {fileID: 7751767553464853679}
   - component: {fileID: 7751767553464853674}
   - component: {fileID: 7751767553464853677}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2918,8 +3039,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7751767553464853676}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -2964,7 +3085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7751767553532095632}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

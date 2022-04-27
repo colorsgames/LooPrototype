@@ -176,12 +176,11 @@ public abstract class Creature : MonoBehaviour
 
         foreach (Rigidbody2D item in limbs)
         {
-            if (!item.simulated)
+            if (item.isKinematic)
             {
-                item.simulated = true;
+                item.isKinematic = false;
             }
         }
-        limbs[0].simulated = false;
     }
 
     protected bool isGrounded()

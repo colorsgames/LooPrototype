@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1852554797965005244}
   - component: {fileID: 1852554797965005245}
   - component: {fileID: 1852554797965005246}
-  m_Layer: 9
+  - component: {fileID: 5677781485598324135}
+  m_Layer: 17
   m_Name: Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,8 +43,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554797965005247}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
@@ -105,6 +106,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07332483, y: 0.25854254}
   m_EdgeRadius: 0
+--- !u!114 &5677781485598324135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554797965005247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554798115660211
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +130,8 @@ GameObject:
   - component: {fileID: 1852554798115660208}
   - component: {fileID: 1852554798115660209}
   - component: {fileID: 1852554798115660210}
-  m_Layer: 9
+  - component: {fileID: 1069090147522746451}
+  m_Layer: 17
   m_Name: Knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,8 +161,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554798115660211}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
@@ -210,6 +224,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07675424, y: 0.25559726}
   m_EdgeRadius: 0
+--- !u!114 &1069090147522746451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554798115660211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554798173670627
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +247,7 @@ GameObject:
   - component: {fileID: 1852554798173670628}
   - component: {fileID: 1852554798173670626}
   - component: {fileID: 1852554798173670625}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,8 +277,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554798173670627}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -297,7 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852554798183637101}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +386,7 @@ GameObject:
   - component: {fileID: 1852554798286714075}
   - component: {fileID: 1852554798286714073}
   - component: {fileID: 1852554798286714072}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,8 +416,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554798286714074}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -438,7 +464,8 @@ GameObject:
   - component: {fileID: 1852554798412030532}
   - component: {fileID: 1852554798412030530}
   - component: {fileID: 1852554798412030529}
-  m_Layer: 9
+  - component: {fileID: 1483494002650599974}
+  m_Layer: 17
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,8 +495,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554798412030531}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 5
@@ -497,6 +524,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.026884716, y: -0.0040328107}
   m_Size: {x: 0.4300995, y: 0.51338065}
   m_Direction: 0
+--- !u!114 &1483494002650599974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554798412030531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554798497411487
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852554798497411472}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852554798550084471}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Shouder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +610,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1852554798706464431}
   - component: {fileID: 1852554798706464429}
-  m_Layer: 9
+  - component: {fileID: 6158471616712719714}
+  m_Layer: 17
   m_Name: RightHip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,6 +659,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0720609, y: 0.21963912}
   m_EdgeRadius: 0
+--- !u!114 &6158471616712719714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554798706464430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554798743226687
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +681,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1852554798743226672}
   - component: {fileID: 1852554798743226686}
-  m_Layer: 9
+  - component: {fileID: 1655345056887532209}
+  m_Layer: 17
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,6 +730,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.076506056, y: 0.19136648}
   m_EdgeRadius: 0
+--- !u!114 &1655345056887532209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554798743226687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554798951260653
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852554798951260654}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +785,7 @@ GameObject:
   - component: {fileID: 1852554798968547473}
   - component: {fileID: 1852554798968547470}
   - component: {fileID: 1852554798968547471}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Elbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,8 +816,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554798968547472}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -798,7 +863,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1852554799071924674}
   - component: {fileID: 1852554799071924672}
-  m_Layer: 9
+  - component: {fileID: 3360137879593636764}
+  m_Layer: 17
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,6 +913,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07464854, y: 0.41479117}
   m_EdgeRadius: 0
+--- !u!114 &3360137879593636764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554799071924673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554799128481834
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +935,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1852554799128481835}
   - component: {fileID: 1852554799128481833}
-  m_Layer: 9
+  - component: {fileID: 1447502850308362109}
+  m_Layer: 17
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,6 +984,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3369853, y: 0.25543693}
   m_EdgeRadius: 0
+--- !u!114 &1447502850308362109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554799128481834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554799183464508
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852554799183464509}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1178,7 @@ GameObject:
   - component: {fileID: 1852554799341686215}
   - component: {fileID: 1852554799341686232}
   - component: {fileID: 1852554799341686233}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Loo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1258,7 @@ GameObject:
   - component: {fileID: 1852554799394117817}
   - component: {fileID: 1852554799394117814}
   - component: {fileID: 1852554799394117815}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,8 +1288,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554799394117816}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1244,7 +1335,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1852554799475601037}
   - component: {fileID: 1852554799475601035}
-  m_Layer: 9
+  - component: {fileID: 8152056047668910531}
+  m_Layer: 17
   m_Name: LeftHip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1292,6 +1384,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07847468, y: 0.22108315}
   m_EdgeRadius: 0
+--- !u!114 &8152056047668910531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554799475601036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554799518118228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1406,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1852554799518118229}
   - component: {fileID: 1852554799518118227}
-  m_Layer: 9
+  - component: {fileID: 1915329677282458821}
+  m_Layer: 17
   m_Name: ElbowVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1350,6 +1455,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.075618744, y: 0.17837237}
   m_EdgeRadius: 0
+--- !u!114 &1915329677282458821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852554799518118228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fa64d1223db0f4484ebb8502841df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852554799603388957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,7 +1476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852554799603388958}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1393,7 +1510,7 @@ GameObject:
   - component: {fileID: 1852554799687526406}
   - component: {fileID: 1852554799687526403}
   - component: {fileID: 1852554799687526404}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,8 +1540,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554799687526405}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1471,7 +1588,7 @@ GameObject:
   - component: {fileID: 1852554799698837732}
   - component: {fileID: 1852554799698837729}
   - component: {fileID: 1852554799698837730}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1501,8 +1618,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852554799698837731}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1547,7 +1664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852554799889244217}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1579,7 +1696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8352769525871405129}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1610,7 +1727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8352769525918888660}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: ShotTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8352769525988061565}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: ShotTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,7 +1788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352769526097777440}
   - component: {fileID: 8352769526097777441}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: UZI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1754,7 +1871,7 @@ GameObject:
   - component: {fileID: 8352769526152002517}
   - component: {fileID: 8352769526152002519}
   - component: {fileID: 8352769526152002518}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6557,7 +6674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352769526479746710}
   - component: {fileID: 8352769526479746711}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Awp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6639,7 +6756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352769526593851044}
   - component: {fileID: 8352769526593851045}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6682,7 +6799,11 @@ MonoBehaviour:
   damage: 50
   attackMask:
     serializedVersion: 2
-    m_Bits: 193
+    m_Bits: 65729
+  limbsLayer:
+    serializedVersion: 2
+    m_Bits: 262144
+  bloodParticle: {fileID: -6881427048756459265, guid: cd40fb6fd537ce54c8938200e3bb9316, type: 3}
   rayTarget: {fileID: 8352769527483963619}
   distane: 100
   fxLifeTime: 0.1
@@ -6701,7 +6822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8352769526748734927}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6735,7 +6856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352769527019370004}
   - component: {fileID: 8352769527019370005}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: UZI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6778,7 +6899,11 @@ MonoBehaviour:
   damage: 30
   attackMask:
     serializedVersion: 2
-    m_Bits: 193
+    m_Bits: 65729
+  limbsLayer:
+    serializedVersion: 2
+    m_Bits: 262144
+  bloodParticle: {fileID: -6881427048756459265, guid: cd40fb6fd537ce54c8938200e3bb9316, type: 3}
   rayTarget: {fileID: 8352769525918888660}
   distane: 100
   fxLifeTime: 0.1
@@ -6799,7 +6924,7 @@ GameObject:
   - component: {fileID: 8352769527028377747}
   - component: {fileID: 8352769527028377749}
   - component: {fileID: 8352769527028377748}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11601,7 +11726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8352769527483963619}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: ShotTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11632,7 +11757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352769527752069780}
   - component: {fileID: 8352769527752069779}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: AWP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11675,7 +11800,11 @@ MonoBehaviour:
   damage: 100
   attackMask:
     serializedVersion: 2
-    m_Bits: 193
+    m_Bits: 65729
+  limbsLayer:
+    serializedVersion: 2
+    m_Bits: 262144
+  bloodParticle: {fileID: -6881427048756459265, guid: cd40fb6fd537ce54c8938200e3bb9316, type: 3}
   rayTarget: {fileID: 8352769525988061565}
   distane: 100
   fxLifeTime: 0.1
@@ -11696,7 +11825,7 @@ GameObject:
   - component: {fileID: 8352769527806066145}
   - component: {fileID: 8352769527806066147}
   - component: {fileID: 8352769527806066146}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16499,7 +16628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352769527987154943}
   - component: {fileID: 8352769527987154928}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: VisRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16641,7 +16770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929804756339023}
   - component: {fileID: 8994929804756339022}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: LeftLegVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16723,7 +16852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929804804721507}
   - component: {fileID: 8994929804804721506}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16805,7 +16934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929805026542575}
   - component: {fileID: 8994929805026542574}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16887,7 +17016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929805106714934}
   - component: {fileID: 8994929805106714933}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: LeftArmVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16969,7 +17098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929805274640061}
   - component: {fileID: 8994929805274640060}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17113,7 +17242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8994929805671064595}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17145,7 +17274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929805696966967}
   - component: {fileID: 8994929805696966966}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17227,7 +17356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929806018022854}
   - component: {fileID: 8994929806018022853}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: HeadVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17309,7 +17438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929806277857452}
   - component: {fileID: 8994929806277857451}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightLegVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17391,7 +17520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929806327244104}
   - component: {fileID: 8994929806327244103}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: BadGuy2-export32x32_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17473,7 +17602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8994929806461197792}
   - component: {fileID: 8994929806461182495}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: RightArmVis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
