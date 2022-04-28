@@ -13,12 +13,12 @@ public class Inventory : MonoBehaviour
     private Animator armAnimator;
     [SerializeField]
     private float dropForce;
-    [Header("For all")]
+    [Header("For SwordsMan")]
     [SerializeField]
     private GameObject sword;
     [SerializeField]
     private GameObject backSword;
-    
+
     private Items item;
 
     private int itemId = -1;

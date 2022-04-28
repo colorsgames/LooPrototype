@@ -208,10 +208,10 @@ public class Weapons : MonoBehaviour
         if (hit.collider.GetComponent<Chain>())
         {
             hit.collider.GetComponent<Chain>().Destroy();
-            print("false");
         }
         if (hit.collider.GetComponent<Limbs>())
         {
+            hit.collider.GetComponent<Limbs>().Destroy();
             Particle particle = Instantiate(bloodParticle, hit.point, Quaternion.identity);
             particle.SetParent(hit.transform);
         }

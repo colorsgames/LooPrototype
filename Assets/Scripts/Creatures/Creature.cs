@@ -143,8 +143,11 @@ public abstract class Creature : MonoBehaviour
         curretHealth -= damage;
         if (curretHealth <= 0)
         {
+            if (Alive)
+            {
+                Dead();
+            }
             Alive = false;
-            Dead();
         }
     }
 
