@@ -6,6 +6,8 @@ public class Particle : MonoBehaviour
 {
     [SerializeField]
     private float lifeTime;
+    [SerializeField]
+    private float emissionTime;
 
     private ParticleSystem partSys;
 
@@ -14,13 +16,13 @@ public class Particle : MonoBehaviour
     private void Start()
     {
         partSys = GetComponent<ParticleSystem>();
-        Destroy(gameObject, lifeTime + 2);
+        Destroy(gameObject, lifeTime);
     }
 
     private void Update()
     {
         curretTime += Time.deltaTime;
-        if(curretTime > lifeTime)
+        if(curretTime > emissionTime)
         {
             var emiss = partSys.emission;
             emiss.enabled = false;

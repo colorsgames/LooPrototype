@@ -8,6 +8,8 @@ public class EnemySpawn : MonoBehaviour
     private GameObject spawnObject;
     [SerializeField]
     private float spawnDelay;
+    [SerializeField]
+    private int maxCount;
 
     private void Start()
     {
@@ -16,10 +18,11 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator spawnCoroutine()
     {
-        while (true)
+        int i = 0;
+        while (i < maxCount)
         {
             yield return new WaitForSeconds(spawnDelay);
-
+            i++;
             Spawn();
         }
     }

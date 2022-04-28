@@ -2663,6 +2663,10 @@ MonoBehaviour:
   strayingRandomRadius: 20
   weapon: {fileID: 1076991717426973381}
   destroyTime: 10
+  minWalkSpeed: 3
+  maxWalkSpeed: 4
+  minSize: 0.9
+  maxSize: 1
   attackMask:
     serializedVersion: 2
     m_Bits: 128

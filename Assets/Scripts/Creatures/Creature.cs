@@ -40,6 +40,7 @@ public abstract class Creature : MonoBehaviour
     private Vector2 connectionVelocity;
 
     private float curretSpeed;
+    private float curretSize;
     private float curretHealth;
 
     protected virtual void Start()
@@ -51,6 +52,7 @@ public abstract class Creature : MonoBehaviour
             limbs = GetComponentsInChildren<Rigidbody2D>();
         }
         curretSpeed = WalkSpeed;
+        curretSize = transform.localScale.x;
     }
 
     protected virtual void Update()
@@ -130,11 +132,11 @@ public abstract class Creature : MonoBehaviour
     {
         if (rot > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(curretSize, curretSize, curretSize);
         }
         else if (rot < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-curretSize, curretSize, curretSize);
         }
     }
 
