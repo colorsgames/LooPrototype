@@ -525,7 +525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 7751767553089661206, guid: 78e0f4b827063234a92153ece01c6187, type: 3}
   spawnDelay: 0
-  maxCount: 4
+  maxCount: 1
 --- !u!4 &236805076
 Transform:
   m_ObjectHideFlags: 0
@@ -75816,6 +75816,10 @@ PrefabInstance:
     - target: {fileID: 8909474848235621493, guid: 9d400eae6311ef14986a2cd009f5b7f4, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909474848235621497, guid: 9d400eae6311ef14986a2cd009f5b7f4, type: 3}
+      propertyPath: MaxHealth
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8909474848235621498, guid: 9d400eae6311ef14986a2cd009f5b7f4, type: 3}
       propertyPath: m_RootOrder

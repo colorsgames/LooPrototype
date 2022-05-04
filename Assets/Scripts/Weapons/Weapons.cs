@@ -55,7 +55,7 @@ public class Weapons : MonoBehaviour
 
     RaycastHit2D oldHit;
 
-    void Start()
+    void Awake()
     {
         inventory = transform.GetComponentInParent<Inventory>();
         creature = GetComponentInParent<Creature>();
@@ -108,7 +108,7 @@ public class Weapons : MonoBehaviour
             if (recharge)
             {
                 curretRechTime += Time.deltaTime;
-                if(curretRechTime > rechargeTime)
+                if (curretRechTime > rechargeTime)
                 {
                     curretAmmo = maxAmmo;
                     curretRechTime = 0;
@@ -123,7 +123,7 @@ public class Weapons : MonoBehaviour
             if (emiss.enabled)
             {
                 curretFXTime += Time.deltaTime;
-                if(curretFXTime > fxLifeTime)
+                if (curretFXTime > fxLifeTime)
                 {
                     SetGunEffects(false);
                     curretFXTime = 0;
@@ -172,6 +172,25 @@ public class Weapons : MonoBehaviour
         }
     }
 
+    public void Protected(bool state)
+    {
+        if (state)
+        {
+            if (creature.takeSword && !creature.takeGun)
+            {
+                armAnimator.SetFloat("HaveWeapon", 2);
+                inventory.EnableShield(true);
+            }
+        }
+        else
+        {
+            if (!creature.takeGun)
+            {
+                armAnimator.SetFloat("HaveWeapon", 0);
+                inventory.EnableShield(false);
+            }
+        }
+    }
 
     void Shot()
     {

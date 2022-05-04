@@ -25,6 +25,8 @@ public abstract class Creature : MonoBehaviour
     public bool takeGun;
     [HideInInspector]
     public bool takeSword;
+    [HideInInspector]
+    public bool protection;
 
     protected bool running;
     protected bool desiredJump;

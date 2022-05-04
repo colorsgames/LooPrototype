@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour
     private GameObject sword;
     [SerializeField]
     private GameObject backSword;
+    [SerializeField]
+    private GameObject shield;
 
     private Items item;
 
@@ -34,6 +36,15 @@ public class Inventory : MonoBehaviour
         {
             itemId = Random.Range(0, weapons.Length);
             armAnimator.SetFloat("HaveWeapon", 1);
+        }
+    }
+
+    private void Start()
+    {
+        if (sword)
+        {
+            sword.SetActive(false);
+            shield.SetActive(false);
         }
     }
 
@@ -97,6 +108,14 @@ public class Inventory : MonoBehaviour
         creature.takeSword = false;
         sword.SetActive(false);
         backSword.SetActive(true);
+    }
+
+    public void EnableShield(bool state)
+    {
+        if (shield)
+        {
+            shield.SetActive(state);
+        }
     }
 
     void TakeGun()

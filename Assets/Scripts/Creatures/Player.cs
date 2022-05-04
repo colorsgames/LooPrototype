@@ -14,7 +14,6 @@ public class Player : Creature
 
     bool takeBackWeapon;
 
-
     protected override void Start()
     {
         inventory = GetComponentInChildren<Inventory>();
@@ -28,7 +27,7 @@ public class Player : Creature
         running = Input.GetButton("Run");
         desiredJump |= Input.GetButtonDown("Jump");
 
-        if (Input.GetButtonDown("TakeBackWeapon") && !takeGun)
+        if (Input.GetButtonDown("TakeBackWeapon") && !takeGun && !protection)
         {
             if (!takeBackWeapon)
             {
@@ -40,6 +39,17 @@ public class Player : Creature
                 armAnimator.SetTrigger("PutAway");
                 takeBackWeapon = false;
             }
+        }
+
+        if (Input.GetButton("Fire2"))
+        {
+            weapons[0].Protected(true);
+            protection = true;
+        }
+        else if (Input.GetButtonUp("Fire2"))
+        {
+            weapons[0].Protected(false);
+            protection = false;
         }
 
         foreach (Weapons item in weapons)

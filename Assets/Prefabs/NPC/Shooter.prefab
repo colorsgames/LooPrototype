@@ -1250,6 +1250,7 @@ MonoBehaviour:
   dropForce: 4
   sword: {fileID: 0}
   backSword: {fileID: 0}
+  shield: {fileID: 0}
   attack: 0
 --- !u!1 &1852554799394117816
 GameObject:
@@ -6803,10 +6804,10 @@ MonoBehaviour:
   damage: 50
   attackMask:
     serializedVersion: 2
-    m_Bits: 65729
+    m_Bits: 590017
   limbsLayer:
     serializedVersion: 2
-    m_Bits: 262144
+    m_Bits: 786432
   bloodParticle: {fileID: -6881427048756459265, guid: cd40fb6fd537ce54c8938200e3bb9316, type: 3}
   rayTarget: {fileID: 8352769527483963619}
   distane: 100
@@ -6815,6 +6816,7 @@ MonoBehaviour:
   maxAmmo: 30
   rechargeTime: 3
   swordTrail: {fileID: 0}
+  boxColl: {fileID: 0}
   attack: 0
   curretAmmo: 30
 --- !u!1 &8352769526748734926
@@ -6903,10 +6905,10 @@ MonoBehaviour:
   damage: 30
   attackMask:
     serializedVersion: 2
-    m_Bits: 65729
+    m_Bits: 590017
   limbsLayer:
     serializedVersion: 2
-    m_Bits: 262144
+    m_Bits: 786432
   bloodParticle: {fileID: -6881427048756459265, guid: cd40fb6fd537ce54c8938200e3bb9316, type: 3}
   rayTarget: {fileID: 8352769525918888660}
   distane: 100
@@ -6915,6 +6917,7 @@ MonoBehaviour:
   maxAmmo: 25
   rechargeTime: 2
   swordTrail: {fileID: 0}
+  boxColl: {fileID: 0}
   attack: 0
   curretAmmo: 25
 --- !u!1 &8352769527028377746
@@ -11804,10 +11807,10 @@ MonoBehaviour:
   damage: 100
   attackMask:
     serializedVersion: 2
-    m_Bits: 65729
+    m_Bits: 590017
   limbsLayer:
     serializedVersion: 2
-    m_Bits: 262144
+    m_Bits: 786432
   bloodParticle: {fileID: -6881427048756459265, guid: cd40fb6fd537ce54c8938200e3bb9316, type: 3}
   rayTarget: {fileID: 8352769525988061565}
   distane: 100
@@ -11816,6 +11819,7 @@ MonoBehaviour:
   maxAmmo: 10
   rechargeTime: 5
   swordTrail: {fileID: 0}
+  boxColl: {fileID: 0}
   attack: 0
   curretAmmo: 10
 --- !u!1 &8352769527806066144
